@@ -57,7 +57,7 @@ jobs:
     passed: ['Unit Test']
     trigger: true
   - task: buildanddeploy
-    file: sampleproduct-1-web/ci/test.yml
+    file: sampleproduct-1-web/ci/build.yml
   - put: deployapp
     params:
       manifest: sampleproduct-1-web/manifest.yml
