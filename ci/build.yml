@@ -21,6 +21,7 @@ run:
       echo $(pwd)
       chmod 775 mvnw
       ./mvnw -DskipTests=true package
-      cp target/sampleproduct-1-web-0.0.1.war  build-output/.
+      cd
       cd build-output
+      cp sampleproduct-1-web/target/sampleproduct-1-web-0.0.1.war  /.
       echo $(ll)
