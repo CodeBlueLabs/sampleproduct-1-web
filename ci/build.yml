@@ -20,5 +20,5 @@ run:
       cd sampleproduct-1-web
       echo $(pwd)
       chmod 775 mvnw
-      ./mvnw package
+      ./mvnw -DskipTests=true package
       curl -v -F r=releases -F hasPom=false -F e=war -F g=codebluelab.pal.web -F a=sampleproduct-1-web -F v=0.0.1 -F v=3.0.0 file=@target/sampleproduct-1-web-0.0.1-SNAPSHOT.war -u admin:pass1234 http://artifactory.cognizantagilelab.com/nexus/service/local/artifact/maven/content
