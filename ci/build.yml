@@ -20,7 +20,7 @@ run:
       cd sampleproduct-1-web
       echo $(pwd)
       chmod 775 mvnw
-      ./mvnw clean install
-      cp source-code/target/sampleproduct-1-web-0.0.1.war  build-output/.
+      ./mvnw -DskipTests=true package
+      cp sampleproduct-1-web/target/sampleproduct-1-web-0.0.1.war  build-output/.
       cd build-output
       echo $(ll)
