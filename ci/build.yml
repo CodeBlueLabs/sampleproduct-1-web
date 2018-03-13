@@ -22,3 +22,5 @@ run:
       chmod 775 mvnw
       ./mvnw clean package
       cp source-code/target/sampleproduct-1-web-0.0.1.war  build-output/.
+      cd build-output
+      echo $(ls)
