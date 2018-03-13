@@ -10,7 +10,7 @@ inputs:
 
 outputs:
   - name: build-output
-
+    path: build-output/
 run:
   path: bash
   args:
@@ -21,4 +21,3 @@ run:
       echo $(pwd)
       chmod 775 mvnw
       ./mvnw -DskipTests=true package
-      curl -v -F r=releases -F hasPom=false -F e=war -F g=cognizant.codebluelabs.palimmersion -F a=sampleproduct-1-web -F v=0.0.1 -F v=3.0.0 file=@/tmp/build/5b715c26/sampleproduct-1-web/target/sampleproduct-1-web-0.0.1.war -u admin:pass1234 http://artifactory.cognizantagilelab.com/nexus/service/local/artifact/maven/content
