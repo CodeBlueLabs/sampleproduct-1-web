@@ -21,3 +21,4 @@ run:
       echo $(pwd)
       chmod 775 mvnw
       ./mvnw -DskipTests=true package
+      ls
