@@ -61,7 +61,6 @@ jobs:
   - put: deployapp
     params:
       manifest: sampleproduct-1-web/manifest.yml
-      path: sampleproduct-1-web/target/sampleproduct-1-web-0.0.1.war
     on_success:
       put: im-notify
       params:
