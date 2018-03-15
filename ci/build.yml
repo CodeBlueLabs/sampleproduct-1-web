@@ -21,4 +21,3 @@ run:
       echo $(pwd)
       chmod 775 mvnw
       ./mvnw -DskipTests=true package
-      curl -v -F r=releases -F hasPom=false -F e=war -F g=cognizant.codebluelabs.palimmersion -F a=sampleproduct-1-web -F v=0.0.1 file=@target/sampleproduct-1-web-0.0.1.war -u admin:pass1234 http://artifactory.cognizantagilelab.com/nexus/service/local/artifact/maven/content
