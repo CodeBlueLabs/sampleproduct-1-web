@@ -10,7 +10,7 @@ angular.module('myApp.controllers', [])
     $scope.init = function(){
          $http({method : "GET",url : welcomeURL}).then(function(response) {
             $scope.welcomeText = response.data;
-            $scope.welcomeText  = $scope.welcomeText + "-updated";
+            $scope.welcomeText  = $scope.welcomeText;
          }, function myError(response) {
 
          });
