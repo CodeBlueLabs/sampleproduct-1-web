@@ -19,7 +19,7 @@ run:
       echo $(pwd)
       cd sampleproduct-1-web
       echo $(pwd)
-      chmod 775 sampleproduct-1-web/mvnw
+      chmod 775 mvnw
       ./mvnw -DskipTests=true package
       ls
       ls target
