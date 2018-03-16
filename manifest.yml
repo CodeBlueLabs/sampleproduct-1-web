@@ -6,5 +6,5 @@ disk_quota: 4096MB
 
 applications:
   - name: sampleproduct1_app
-    path: target/sampleproduct-1-web-0.0.1.war
+    path: sampleproduct-1-web/target/sampleproduct-1-web-0.0.1.war
     buildpack: java_buildpack
