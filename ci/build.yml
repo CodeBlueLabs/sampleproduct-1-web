@@ -25,4 +25,4 @@ run:
       ls target
       cp manifest.yml ../build-output
       cp target/sampleproduct-1-web-0.0.1.war ../build-output
-      ls build-output
+      ls ../build-output
