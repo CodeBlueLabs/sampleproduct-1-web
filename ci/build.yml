@@ -17,12 +17,11 @@ run:
     - -exc
     - |
       echo $(pwd)
-      cd sampleproduct-1-web
       echo $(pwd)
-      chmod 775 mvnw
-      ./mvnw -DskipTests=true package
-      ls
-      ls target
-      cp manifest.yml /build-output
-      cp target/sampleproduct-1-web-0.0.1.war /build-output
+      chmod 775 sampleproduct-1-web/mvnw
+      sampleproduct-1-web/mvnw -DskipTests=true package
+      ls sampleproduct-1-web
+      ls sampleproduct-1-web/target
+      cp sampleproduct-1-web/manifest.yml build-output
+      cp sampleproduct-1-web/target/sampleproduct-1-web-0.0.1.war build-output
       ls build-output
