@@ -10,7 +10,7 @@ inputs:
 
 outputs:
   - name: build-output
-    path: build-output/
+
 run:
   path: bash
   args:
@@ -22,3 +22,6 @@ run:
       chmod 775 mvnw
       ./mvnw -DskipTests=true package
       ls
+      cp manifest.yml build-output
+      cd target/sampleproduct-1-web-0.0.1.war build-output
+      ls build-output
