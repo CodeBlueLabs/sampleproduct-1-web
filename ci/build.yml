@@ -17,6 +17,8 @@ run:
     - -exc
     - |
       echo $(pwd)
+      cd sampleproduct-1-web
+      echo $(pwd)
       chmod 775 mvnw
       ./mvnw -DskipTests=true package
       ls
