@@ -6,7 +6,10 @@ image_resource:
   source: {repository: java, tag: openjdk-8}
 
 inputs:
-- name: sampleproduct-1-web
+  - name: sampleproduct-1-web
+
+outputs:
+  - name: build-output
 
 run:
   path: bash
@@ -14,8 +17,12 @@ run:
     - -exc
     - |
       echo $(pwd)
-      cd sampleproduct-1-web
+      cd sampleproduct-1-web/acceptance_tests
       echo $(pwd)
-      chmod 775 mvnw
-      ./mvnw test
-      cd
+      chmod 775 npm
+      npm install
+      mocha acceptancetest.js
+      ls mochawesome-report
+      cp manifest.yml ../build-output
+      cp cp -r mochawesome-report/* ../build-output
+      ls ../build-output

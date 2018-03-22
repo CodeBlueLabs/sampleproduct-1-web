@@ -37,7 +37,7 @@ jobs:
   - get: sampleproduct-1-web
     trigger: true
   - task: unittest
-    file: sampleproduct-1-web/ci/test.yml
+    file: sampleproduct-1-web/ci/compile.yml
     on_success:
       put: im-notify
       params:
@@ -50,11 +50,32 @@ jobs:
         channel: ((slack.channel))
         text: |
           *Unit Test* failed with test case failures, check the build log for details
-- name: Build and Deploy
+- name: Acceptance Test
   serial: true
   plan:
   - get: sampleproduct-1-web
     passed: ['Unit Test']
+    trigger: true
+  - task: acceptancetest
+    file: sampleproduct-1-web/ci/test.yml
+    on_success:
+      put: im-notify
+      params:
+        channel: ((slack.channel))
+        text: |
+          *Acceptance Test* completed successfully
+          <https://sampleproduct1-ws.cfapps.io/build/spock-reports/index.html| Click here> to view the test report
+    on_failure:
+      put: im-notify
+      params:
+        channel: ((slack.channel))
+        text: |
+          *Acceptance Test* failed with test case failures, check the build log for details
+- name: Build and Deploy
+  serial: true
+  plan:
+  - get: sampleproduct-1-web
+    passed: ['Acceptance Test']
     trigger: true
   - task: buildanddeploy
     file: sampleproduct-1-web/ci/build.yml
