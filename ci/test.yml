@@ -16,12 +16,10 @@ run:
   args:
     - -exc
     - |
+      export TERM=${TERM:-dumb}
       echo $(pwd)
-      cd sampleproduct-1-web/acceptance_tests
+      cd sampleproduct-1-web
       echo $(pwd)
-      npm install
-      mocha acceptancetest.js
-      ls mochawesome-report
-      cp manifest.yml ../build-output
-      cp cp -r mochawesome-report/* ../build-output
-      ls ../build-output
+      chmod 755 gradlew
+      ./gradlew --no-daemon build test
+      ls build

@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2018-03-23T10:48:13.133Z",
+    "end": "2018-03-23T10:48:28.658Z",
+    "duration": 15525,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "success",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "610ea6b8-0e92-442d-8727-41d0a7d4e079",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "c51d1fce-6da1-4a9a-9905-80a209bc37a5",
+        "title": "When the application is launched",
+        "fullFile": "C:\\Ragav\\Work\\new_workspace\\codeblue\\sampleproduct-1-web\\acceptance_tests\\test\\pageSpec.js",
+        "file": "\\test\\pageSpec.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "When the application is launched \"before all\" hook",
+            "timedOut": false,
+            "duration": 8076,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "( done ) => {\n    browser\n        .goto( BASE_URL )\n        .evaluate(() => {\n          return localStorage.clear();\n        })\n        .then(() => {\n          done();\n        });",
+            "err": {},
+            "isRoot": false,
+            "uuid": "e35d2067-156d-4bd8-8243-d12d4d2b6944",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after all\" hook",
+            "fullTitle": "When the application is launched \"after all\" hook",
+            "timedOut": false,
+            "duration": 1,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "browser\n  .end();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "0e66cb5f-483e-4083-ad0d-591d1e603f1c",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "should see 3 menus on the top right",
+            "fullTitle": "When the application is launched should see 3 menus on the top right",
+            "timedOut": false,
+            "duration": 36,
+            "state": "passed",
+            "speed": "fast",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "( done ) => {\n       browser\n         .wait(\"li\")\n         .evaluate(() => {\n           return document.querySelectorAll( \"li\" ).length;\n         })\n         .then(( res ) => {\n           expect( res ).to.eql( 3 );\n           done();\n         }).catch( onError )",
+            "err": {},
+            "isRoot": false,
+            "uuid": "f416a274-d020-4866-b791-8d32ffeb8522",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "f416a274-d020-4866-b791-8d32ffeb8522"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 36,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 15000
+      },
+      {
+        "uuid": "70ee5629-3d82-484b-9562-39e9a74f615c",
+        "title": "When the application is launched",
+        "fullFile": "C:\\Ragav\\Work\\new_workspace\\codeblue\\sampleproduct-1-web\\acceptance_tests\\test\\welcomeSpec.js",
+        "file": "\\test\\welcomeSpec.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "When the application is launched \"before all\" hook",
+            "timedOut": false,
+            "duration": 7090,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "( done ) => {\n    browser\n        .goto( BASE_URL )\n        .evaluate(() => {\n          return localStorage.clear();\n        })\n        .then(() => {\n          done();\n        });",
+            "err": {},
+            "isRoot": false,
+            "uuid": "19ba2b34-77c7-4b52-a818-31211be40530",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after all\" hook",
+            "fullTitle": "When the application is launched \"after all\" hook",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "browser\n  .end();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "bd194f55-83a4-4533-ac84-3545b5bf84f9",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "should see the welcome message",
+            "fullTitle": "When the application is launched should see the welcome message",
+            "timedOut": false,
+            "duration": 296,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "( done ) => {\n              browser\n                .wait(() => {\n                      return document.querySelectorAll( \"h2\" )[0].innerHTML !== \"\";\n                })\n                .evaluate(() => {\n                  return document.querySelectorAll( \"h2\" )[0].innerHTML;\n                })\n                .then(( res ) => {\n                  expect( res ).to.eql( \"Welcome to CodeBlue Immersion Lab.\" );\n                  done();\n                }).catch( onError );",
+            "err": {},
+            "isRoot": false,
+            "uuid": "0da0b205-fc9c-429f-afd0-75ffd808e9f3",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "0da0b205-fc9c-429f-afd0-75ffd808e9f3"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 296,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 15000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 2000
+  },
+  "copyrightYear": 2018
+}

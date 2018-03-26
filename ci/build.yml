@@ -16,13 +16,15 @@ run:
   args:
     - -exc
     - |
+      export TERM=${TERM:-dumb}
       echo $(pwd)
       cd sampleproduct-1-web
       echo $(pwd)
-      chmod 775 mvnw
-      ./mvnw -DskipTests=true package
+      chmod 755 gradlew
+      ./gradlew --no-daemon build
       ls
-      ls target
+      ls build/libs
+      cp build/libs/sampleproduct-1-web-0.0.1.jar ../build-output
       cp manifest.yml ../build-output
-      cp target/sampleproduct-1-web-0.0.1.war ../build-output
+
       ls ../build-output
