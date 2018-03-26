@@ -13,9 +13,10 @@ run:
   args:
     - -exc
     - |
+      export TERM=${TERM:-dumb}
       echo $(pwd)
       cd sampleproduct-1-web
       echo $(pwd)
-      chmod 775 mvnw
-      ./mvnw clean compile
-      cd
+      chmod 755 gradlew
+      ./gradlew --no-daemon build test
+      ls build
