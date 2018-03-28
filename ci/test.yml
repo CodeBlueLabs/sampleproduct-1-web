@@ -22,6 +22,5 @@ run:
       cd sampleproduct-1-web/acceptance_tests
       ls
       npm install
-      npm install electron
       npm test
       ls
