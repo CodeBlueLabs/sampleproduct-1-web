@@ -19,8 +19,8 @@ run:
     - |
       export TERM=${TERM:-dumb}
       echo $(pwd)
-      cd sampleproduct-1-web
+      cd sampleproduct-1-web/acceptance_tests
+      ls
       npm install
-      mocha acceptancetest.js
-      cd acceptance_tests
+      npm test
       ls
