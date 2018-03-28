@@ -3,8 +3,9 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: java, tag: openjdk-8}
-
+  source:
+    repository: djudorange/node-gulp-mocha
+    tag: "latest"
 inputs:
   - name: sampleproduct-1-web
 
@@ -19,7 +20,8 @@ run:
       export TERM=${TERM:-dumb}
       echo $(pwd)
       cd sampleproduct-1-web
-      echo $(pwd)
-      chmod 755 gradlew
-      ./gradlew --no-daemon build test
-      ls build
+      cd concourse-pipeline-samples/blue-green-app-deployment/bgd-app
+      npm install
+      mocha mocha acceptancetest.js
+      cd acceptance_tests
+      ls
