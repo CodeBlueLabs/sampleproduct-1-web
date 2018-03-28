@@ -1,0 +1,6 @@
+applications:
+- name: web_acceptance_report
+  memory: 32M
+  instances: 2
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack
+  random-route: true
