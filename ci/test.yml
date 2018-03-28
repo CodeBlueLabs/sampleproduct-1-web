@@ -28,6 +28,7 @@ run:
       apt-get install -y zip
       zip -r sampleproduct-1-web.war .
       appstatus=$(curl --silent -u admin:"@g1l3xp" "http://cognizantagilelab.com/manager/text/list" | grep sampleproduct-1-web)
+      echo $appstatus
       if [ ! -z "$appstatus" ]; then
       	echo "Undeploying sampleproduct-1-web http://cognizantagilelab.com/manager/text/text/undeploy?path=/sampleproduct-1-web .."
       	UNDEPLOY_STATUS=$(curl -v -u admin:"@g1l3xp" "http://cognizantagilelab.com/manager/text/undeploy?path=/sampleproduct-1-web" | head -n1)
