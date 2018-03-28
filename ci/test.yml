@@ -20,7 +20,6 @@ run:
       export TERM=${TERM:-dumb}
       echo $(pwd)
       cd sampleproduct-1-web
-      cd concourse-pipeline-samples/blue-green-app-deployment/bgd-app
       npm install
       mocha mocha acceptancetest.js
       cd acceptance_tests
