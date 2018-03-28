@@ -21,6 +21,6 @@ run:
       echo $(pwd)
       cd sampleproduct-1-web
       npm install
-      mocha mocha acceptancetest.js
+      mocha acceptancetest.js
       cd acceptance_tests
       ls
