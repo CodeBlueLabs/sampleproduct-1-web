@@ -20,3 +20,8 @@ domain:
   name: pcfalm.agileinteractivelab.com
 app:
   url: https://onedigital.cognizant.com/codeblue
+app:
+  url: https://wsfinancialservices.cfapps.io/
+  unittest:
+    url: http://cognizantagilelab.com/sampleproduct-1-web
+    name: sampleproduct-1-web
