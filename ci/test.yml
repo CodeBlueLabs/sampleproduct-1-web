@@ -22,24 +22,3 @@ run:
       cd sampleproduct-1-web/acceptance_tests
       ls
       npm install
-      cd mochawesome-report
-      ls
-      apt-get update
-      apt-get install -y zip
-      zip -r sampleproduct-1-web.war .
-      appstatus=$(curl --silent -u admin:"@g1l3xp" "http://cognizantagilelab.com/manager/text/list" | grep sampleproduct-1-web)
-      echo $appstatus
-      if [ ! -z "$appstatus" ]; then
-      	echo "Undeploying sampleproduct-1-web http://cognizantagilelab.com/manager/text/text/undeploy?path=/sampleproduct-1-web .."
-      	UNDEPLOY_STATUS=$(curl -v -u admin:"@g1l3xp" "http://cognizantagilelab.com/manager/text/undeploy?path=/sampleproduct-1-web" | head -n1)
-
-      	if [[ $UNDEPLOY_STATUS == OK* ]]; then
-      		echo "Undeploy Completed, hence deploying unit test results .."
-      	else
-      		echo "Undeploy failed .."
-      		exit 1
-      	fi
-      else
-      	echo "sampleproduct-1-web is not up and running, hence deploying unit test results .."
-      fi
-      curl -v -u admin:"@g1l3xp" -T sampleproduct-1-web.war "http://cognizantagilelab.com/manager/text/deploy?path=/sampleproduct-1-web"
